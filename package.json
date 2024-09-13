@@ -1,0 +1,26 @@
+{
+  "name": "nexslot",
+  "version": "1.0.0",
+  "description": "Nexslot is an open appointment booking product created for GHL",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PhoenixMystique/NexSlot.git"
+  },
+  "author": "Aditya Tanwar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PhoenixMystique/NexSlot/issues"
+  },
+  "homepage": "https://github.com/PhoenixMystique/NexSlot#readme",
+  "dependencies": {
+    "dayjs": "^1.11.13",
+    "express": "^4.21.0",
+    "firebase-admin": "^12.5.0",
+    "joi": "^17.13.3",
+    "moment-timezone": "^0.5.45"
+  }
+}
