@@ -15,13 +15,13 @@ NexSlot is an appointment booking app.
 #### Get Events
 
 ```bash
-curl --location --request GET 'http://localhost:4200/api/events?startDate=2024-09-15&endDate=2024-09-16' \
+curl --location --request GET 'http://API_URL/api/events?startDate=2024-09-15&endDate=2024-09-16' \
 --header 'Content-Type: application/json' 
 ```
 
 #### Get Events
 ```bash
-curl --location 'http://localhost:4200/api/slots' \
+curl --location 'http://API_URL/api/slots' \
 --header 'Content-Type: application/json' \
 --data '{
   "dateTime": "2024-09-16T10:30:00Z",
@@ -31,7 +31,8 @@ curl --location 'http://localhost:4200/api/slots' \
 ```
 ### Get Slots 
 ```bash
-curl --location 'http://localhost:4200/api/slots?date=2024-09-16&timezone=UTC' \
+curl --location --request GET 'http://API_URL/api/slots?date=2024-09-16&timezone=UTC' \
+--header 'Content-Type: application/json' 
 --data ''
 ```
 

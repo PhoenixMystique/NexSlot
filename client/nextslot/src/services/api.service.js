@@ -3,13 +3,13 @@ import { API_URL } from '../config/config'; // Import your base API URL from con
 
 const ApiService = {
   
-  // 1. Fetch Free Slots
-  getFreeSlots: async (date, timezone) => {
+
+  getFreeSlots: async (payload) => {
     try {
-      const response = await axios.get(`${API_URL}/free-slots`, {
+      const response = await axios.get(`${API_URL}/slots`, {
         params: {
-          date: date,
-          timezone: timezone,
+          "date": payload.dateTime,
+          "timezone": payload.timezone,
         },
       });
       return response.data;
@@ -19,12 +19,13 @@ const ApiService = {
     }
   },
 
-  // 2. Create Event
-  createEvent: async (dateTime, duration) => {
+
+  createEvent: async (dateTime, duration,timezone) => {
     try {
-      const response = await axios.post(`${API_URL}/create-event`, {
-        dateTime: dateTime,
-        duration: duration,
+      const response = await axios.post(`${API_URL}/slots`, {
+        "dateTime": dateTime,
+        "duration": duration,
+        "timezone":timezone
       });
       return response.data;
     } catch (error) {
@@ -37,13 +38,12 @@ const ApiService = {
     }
   },
 
-  // 3. Get Events Between StartDate and EndDate
   getEvents: async (startDate, endDate) => {
     try {
       const response = await axios.get(`${API_URL}/events`, {
         params: {
-          startDate: startDate,
-          endDate: endDate,
+          "startDate": startDate,
+          "endDate": endDate,
         },
       });
       return response.data;
