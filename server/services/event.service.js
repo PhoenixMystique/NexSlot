@@ -48,7 +48,11 @@ class EventService {
       formatDateToUTC(startDate),
       formatDateToUTC(endDate)
     );
-    return events;
+    const eventsWithDate = events.map(event => {
+      event.DateTime = event.DateTime.toDate();
+      return event;
+    });
+    return eventsWithDate;
   }
 }
 
