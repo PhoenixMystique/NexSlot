@@ -18,16 +18,13 @@ exports.getFreeSlots = [
 exports.createEvent = [
     validateCreateEvent,
     async (req, res) => {
-      const { eventId, dateTime, duration, name, contact, comment } = req.body;
-  
+      const { dateTime, duration, timezone } = req.body;
+
       try {
         const response = await eventService.createEvent({
-          eventId,
           dateTime,
           duration,
-          name,
-          contact,
-          comment
+          timezone
         });
         res.status(200).json(response);
       } catch (error) {

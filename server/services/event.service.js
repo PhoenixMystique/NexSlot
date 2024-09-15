@@ -27,22 +27,17 @@ class EventService {
       return availableSlots.map((slot) => convertTimezone(slot, "UTC", timezone));
     }
 
-  async createEvent({ eventId, dateTime, duration, name, contact, comment }) {
-      const formattedDateTime = formatDateToUTC(dateTime);
-      const conflict = await eventModel.checkEventConflict(formattedDateTime,config.slotDuration);
+  async createEvent({  dateTime, duration, timezone }) {
+    const convertedDateTime = convertTimezone(dateTime, timezone, 'UTC');
+    const formattedDateTime =formatDateToUTC(convertedDateTime);
+      const conflict = await eventModel.checkEventConflict(formattedDateTime,duration);
       if (conflict) {
         throw new Error("Event already exists for this time.");
       }
       const currentTime = new Date().toISOString();
       const eventData = {
-        eventId,
         DateTime: formattedDateTime,
         Duration: duration,
-        Name: name,
-        Contact: contact,
-        Comment: comment,
-        CreatedAt: formatDateToUTC(currentTime),
-        UpdatedAt: formatDateToUTC(currentTime)
       };
       await eventModel.createEvent(eventData);
       return { message: "Event created successfully" };

@@ -27,6 +27,7 @@ class EventModel {
   }
 
   async checkEventConflict(DateTime, duration) {
+    console.log(DateTime, duration);
     const endTime = new Date(DateTime.getTime() + duration * 60000);
     const startTimestamp = firebase.firestore.Timestamp.fromDate(DateTime);
     const endTimestamp = firebase.firestore.Timestamp.fromDate(endTime);

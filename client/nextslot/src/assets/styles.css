@@ -1,0 +1,56 @@
+
+.container {
+    max-width: 1200px;
+  }
+  
+  .header-text {
+    color: #34d399;
+  }
+  
+  .label-text {
+    color: #34d399;
+  }
+  
+  .button-primary {
+    background-color: #34d399;
+    color: white;
+    border: none;
+  }
+  
+  .button-primary-border {
+    border-color: #34d399;
+  }
+  
+  .button-secondary {
+    background-color: #34d399;
+    color: white;
+  }
+  
+  .button-slot {
+    background-color: #34d399;
+    color: white;
+  }
+.flex {
+    display: flex;
+  }
+  
+  .items-center {
+    align-items: center;
+  }
+  
+  .space-x-2 > * + * {
+    margin-left: 0.5rem; 
+  }
+  
+  .space-y-4 > * + * {
+    margin-top: 1rem;
+  }
+  
+  .md\:w-1\/3 {
+    width: 33.333333%;
+  }
+  
+  .md\:w-2\/3 {
+    width: 66.666667%;
+  }
+  

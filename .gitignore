@@ -1,1 +1,4 @@
-config/firebaseKey.json
+server/config/firebaseKey.json
+client/nexslot/node_modules/
+client/nexslot/.env
+client/nexslot/dist

@@ -6,12 +6,9 @@ const getFreeSlotsSchema = Joi.object({
 });
 
 const createEventSchema = Joi.object({
-  eventId: Joi.string().required(),
   dateTime: Joi.string().isoDate().required(),
   duration: Joi.number().integer().min(5).required(),
-  name: Joi.string().required(),
-  contact: Joi.string().required(),
-  comment: Joi.string().optional()
+  timezone: Joi.string().required()
 });
 
 const getEventsSchema = Joi.object({
