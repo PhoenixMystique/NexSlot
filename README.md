@@ -3,7 +3,7 @@
 NexSlot is an appointment booking app.
 
 ## How to Setup
-Note Make sure save firebase service account json in server/config to access fitestore
+Note: Make sure save firebase service account json in server/config to access fitestore
 ### Backend
 
 1. Go to the `server` directory.
