@@ -10,6 +10,12 @@ NexSlot is an appointment booking app.
 2. Run `npm ci` to install the dependencies.
 3. Start the server with `node server.js`.
 
+### Frontend
+
+1. Go to the `client/nextslot` directory.
+2. Run `npm ci` to install the dependencies.
+3. Start the server with `npm run serve`.
+
 ### API Endpoints
 
 #### Get Events

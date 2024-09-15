@@ -53,4 +53,8 @@
   .md\:w-2\/3 {
     width: 66.666667%;
   }
+  .button-with-margin {
+    margin-bottom: 4rem; 
+    width: 100%; 
+  }
   

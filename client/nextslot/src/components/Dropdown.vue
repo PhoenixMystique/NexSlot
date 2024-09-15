@@ -18,7 +18,6 @@ export default {
   },
   methods: {
     onTimezoneSelected() {
-      console.log('Timezone selected:', this.selectedTimezone);
       this.$emit('timezone-selected', this.selectedTimezone);
     }
   }

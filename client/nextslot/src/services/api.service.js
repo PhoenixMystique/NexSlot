@@ -20,12 +20,12 @@ const ApiService = {
   },
 
 
-  createEvent: async (dateTime, duration,timezone) => {
+  createEvent: async (payload) => {
     try {
       const response = await axios.post(`${API_URL}/slots`, {
-        "dateTime": dateTime,
-        "duration": duration,
-        "timezone":timezone
+        "dateTime": payload.dateTime,
+        "duration": payload.duration,
+        "timezone":payload.timezone
       });
       return response.data;
     } catch (error) {
@@ -38,12 +38,12 @@ const ApiService = {
     }
   },
 
-  getEvents: async (startDate, endDate) => {
+  getEvents: async (payload) => {
     try {
       const response = await axios.get(`${API_URL}/events`, {
         params: {
-          "startDate": startDate,
-          "endDate": endDate,
+          "startDate": payload.startDate,
+          "endDate": payload.endDate,
         },
       });
       return response.data;
